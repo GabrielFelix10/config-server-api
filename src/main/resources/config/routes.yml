@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: first-route
+          uri: http://localhost:9094/
+          predicates:
+            - Path=/cash-back/2
+          filters:
+            - AddRequestHeader=Gabriel,Felix
+            - AddRequestParameter=red, blue
+            - AddResponseHeader=Gabriel, Felix
